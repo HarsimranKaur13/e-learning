@@ -1,0 +1,20 @@
+body {
+    background-color: white;
+    color :black;
+}
+li{
+    color: darkblue;
+   font-style: italic;
+    font-size: 25px;
+}
+h1 {
+    color: black;
+    font-style: italic;
+    font-size: 40px;
+    position: relative;
+    left: 30px;
+}
+.hbar1 {
+    display: inline;
+    margin: 15px;
+}
