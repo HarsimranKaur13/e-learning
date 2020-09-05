@@ -1,0 +1,22 @@
+{% extends 'myapp/base.html' %}
+{% block body_block%}
+    {% if co_req %}
+       {% if co_req.for_everyone == True %}
+           <h2>Name : {{co_req.name}}</h2>
+           <h2>Interested : {{co_req.interested}}</h2>
+           <h2>Price : {{co_req.price}}</h2>
+        {% else %}
+            <h2>Not for Everyone!</h2>
+        {% endif %}
+    {% else %}
+        <strong>CourseDetail! Course not available</strong>
+    {% endif %}
+    <form method="post" novalidate>
+  {% csrf_token %}
+  <table border="1">
+    {{ form }}
+  </table>
+  <button type="submit">Submit</button>
+</form>
+ <p><a href="/myapp/about">About page</a></p>
+{% endblock %}

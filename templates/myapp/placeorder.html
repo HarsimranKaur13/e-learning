@@ -1,0 +1,22 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    {% if courlist %}
+    <h2>Available courses</h2>
+    <ol>
+        {% for c in courlist %}
+        <li> {{ c.name }}{{ c.price }}</li>
+        {% endfor %}
+    </ol>
+    {% else %}
+        <strong>Courses not available</strong>
+    {% endif %}
+  <form method="post" novalidate>
+  {% csrf_token %}
+  <table border="1">
+    {{ form }}
+  </table>
+  <button type="submit">Submit</button>
+</form>
+
+    <a href="{% url 'myapp:index' %}">Index Page</a>
+{% endblock %}

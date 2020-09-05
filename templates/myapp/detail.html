@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    {% if cour %}
+    <h2>Available courses</h2>
+    <ol>
+    {% for co in cour %}
+    <li> {{ co | urlize }}</li>
+{% endfor %}
+    </ol>
+{% else %}
+<strong>Detail! Course not available</strong>
+{% endif %}
+<a href="{% url 'myapp:index' %}">Index Page</a>
+{% endblock %}
